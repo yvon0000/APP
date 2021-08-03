@@ -1,0 +1,76 @@
+body{
+    background-color: aqua;
+}
+#for{
+    color: red;
+    padding: 1rem;
+    margin: auto;
+}
+#formulario{
+    
+    background-image: url("../img/ds.png");
+    background-repeat: no-repeat;
+    background-image:-o-repeating-linear-gradient();
+    
+    text-align: center;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    background-color:black;
+    #nombre{
+        margin:2rem  0;
+        flex: 0 0 10rem 0;
+        color:white;
+
+    }
+    #input{
+padding: 0.5rem 20rem;
+margin-bottom: 1rem;
+background-color:yellowgreen;
+border-radius: 1rem;
+border: none;
+    }
+    #enviar-get{
+        background-color: aqua;
+        padding: 1rem 5rem ;
+        border-radius: 1rem;
+        border: none;
+        margin-bottom: 2rem;
+
+        &.hover{
+            cursor: pointer;
+            background-color: yellow;
+        }
+    }
+    #enviar-post{
+        background-color: aqua;
+        padding: 1rem 5rem ;
+        border-radius: 1rem;
+        border: none;
+        margin-bottom: 2rem;
+
+        &.hover{
+            cursor: pointer;
+            background-color: yellow;
+        }   
+    }
+}
+.nom{
+    background-color: black;
+}
+.alerta{
+    color: white;
+    background-color: red;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 700;
+    width:auto;
+    margin-top: 3rem;
+    
+    
+}
+#for{
+    background-color: black;
+    color: red;
+}

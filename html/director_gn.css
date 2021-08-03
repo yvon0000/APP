@@ -1,0 +1,118 @@
+
+.seccion{
+    text-align:  center;
+}
+#formulario{
+    background-color: slategrey;
+    width: min(50rem ,100%);
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+#formulario legend{
+    font-weight: 700;
+    padding: 0.5em;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    color: yellow;
+    text-transform: uppercase;
+}
+.campo{
+    margin-bottom: 1rem;
+}
+.campo label{
+    border-radius: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+    display: block;
+}
+.input-text{
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 1rem;
+    text-align: center;
+}
+#enviar-get{
+    
+    width: 13rem;
+    height: 4rem;
+    border-radius: 1rem;
+    background-color:#2d572c;
+    border: none;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 800;
+
+}
+#enviar-get:hover{
+cursor: pointer;
+
+}
+html{
+    background-color:saddlebrown;
+}
+.seccion{
+    background-color:saddlebrown;
+}
+.alerta{
+    color: white;
+    background-color: red;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    width:auto;
+    margin-top: 3rem;
+    border-radius: 1rem;
+}
+.posicion{
+    border: black;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+
+
+
+font-weight: 700;
+text-transform: uppercase;
+text-transform:1rem 3rem;
+}
+.boton{
+    
+    background-color:saddlebrown;
+    display: flex;
+justify-content:space-around
+
+
+}
+.formular{
+    background-color:saddlebrown;
+    flex-direction: row;
+    
+}
+#formularioPOST{
+    background-color: slategrey;
+    width: min(50rem ,100%);
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+#enviar-post{
+    
+    width: 13rem;
+    height: 4rem;
+    border-radius: 1rem;
+    background-color:#2d572c;
+    border: none;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 800;
+}
+#formularioPOST legend{
+    font-weight: 700;
+    padding: 0.5em;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    color: yellow;
+    text-transform: uppercase;
+}

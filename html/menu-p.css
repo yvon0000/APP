@@ -1,0 +1,63 @@
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+   background-color: #2d572c;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.contenedor{
+    width: 90rem;
+    margin: 0 auto;
+    margin-top: 5rem;
+    
+}
+.nav-bg{
+    background-color: #2d572c;
+    text-decoration: none;
+}
+.menu-navegacion{
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    font-weight: 700;  
+  
+}
+ 
+@media (min-width: 780px) {
+    .menu-navegacion{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+.menu-navegacion a{
+    color: blanchedalmond;
+    display: block;
+    text-align: center;
+
+    font-weight: 700;  
+    text-align: center;
+   padding: 4rem;
+   text-decoration: underline;
+   background-image: url("src/img/d");
+}
+
+.menu-navegacion a:hover{
+    background-color: yellow;
+    color: black;
+}
+.hero{
+    background-image: url("src/img/freelancer_inicio/hero.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align:  center;
+    padding: 30rem;
+   
+}
+h1{
+    font-size: 3rem;
+    font-weight: 800;
+    color: navy;
+}
+}

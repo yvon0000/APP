@@ -1,0 +1,90 @@
+<section class=" seccion">
+    <h1>Formulario de Datos POST</h1>
+    <form id="formularioPOST" name="valida_datos_post_frm" action="bodega_sur.php" method="post"
+        enctype="application/x-www-form-urldecoded">
+        <fieldset>
+            <div class="contenedor-campo">
+
+                <legend>Contactanos llenando todos los campos</legend>
+
+                <div class="campo">
+                    <label class="nombre" for="nombre">Ingrese el codigo de producto</label>
+                    <input class="input-text" type="text" name="codigo_txt" onkeypress="return solonumeros(event)" >
+                </div>
+                <div class="campo">
+                    <label class="nombre" for="nombre">Ingrese el nombre del producto</label>
+                    <input class="input-text" type="text" name="nombre_txt"onkeypress="  return sololetras(event)" >
+                </div>
+                <div class="campo">
+                    <label class="nombre" for="nombre">Ingrese tipo de producto</label>
+                    <input class="input-text" type="text" name="tipo_txt" onkeypress="  return sololetras(event)"  />
+                </div>
+                <div class="campo">
+                    <label class="nombre" for="nombre">Ingrese la Fecha Evaporacion</label>
+                    <input class="input-text" type="date" name="evaporacion_txt" />
+                </div>
+                <div class="campo">
+                    <label class="nombre" for="nombre">Ingrese fecha Vencimiento</label>
+                    <input class="input-text" type="date" name="vencimiento_txt" />
+                </div>
+                <div class="campo">
+                    <label class="nombre" for="nombre">Ingrese el precio del producto</label>
+                    <input class="input-text" type="text" name="precio_txt" onkeypress="return solonumeros(event)" />
+                </div>
+                <div>
+                    <!--boton oculto mandar para saber que formulario enviamos, ya sea el get o post-->
+                    <input type="hidden" name="enviar_hdn" value="post" />
+                    <input class="alinear" type="button" id="enviar-post" name="enviar_btn" value="Enviar POST"/>
+            </div>
+            </div>
+        </fieldset>
+    </form>
+    <div class="boton">
+        <form id="formular" action="menu.html" method="get">
+            <button id="enviar-get">
+                &laquo; Anterior
+            </button>
+        </form>
+        <form id="formular" action="menu.html" method="get">
+            <button id="enviar-get">
+                 HOME
+            </button>
+        </form>
+        <form id="formular" action="bodega_central.html" method="get">
+            <button id="enviar-get">
+                 Sigiuente &raquo;
+            </button>
+
+        </form>
+        
+
+        
+    </div>
+
+</section>
+
+
+
+
+
+<div class="boton">
+    <form id="formular" action="menu.html" method="get">
+        <button id="enviar-get">
+            &laquo; Anterior
+        </button>
+    </form>
+    <form id="formular" action="menu.html" method="get">
+        <button id="enviar-get">
+             HOME
+        </button>
+    </form>
+    <form id="formular" action="bodega_central.html" method="get">
+        <button id="enviar-get">
+             Sigiuente &raquo;
+        </button>
+
+    </form>
+    
+
+    
+</div>

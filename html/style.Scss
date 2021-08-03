@@ -1,0 +1,114 @@
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;  
+    
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    font-family:'Courier New', Courier, monospace;
+    font-size: 1.6rem;
+
+
+}
+p {
+    color: white;
+    font-size: 2rem;
+}
+.contenedor {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1, h2, h3 {
+    font-family:'Courier New', Courier, monospace;
+    margin: 0 0 5rem/ 2 0 ;
+    font-weight: 900;
+    color:mediumspringgreen;
+    text-align: center;
+}
+/**MIXIN*/
+/** Media Queries **/
+$telefono: 480px;
+$tablet: 768px;
+$desktop: 1024px;
+@mixin telefono {
+    @media (min-width: #{$telefono}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$tablet}) {
+        @content;
+    }
+}
+  
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+@mixin grid($columnas, $espaciado ) {
+    display: grid;
+    gap: $espaciado;
+    grid-template-columns: repeat($columnas, 1fr);
+}
+
+h1 {
+    font-size: 4rem;
+}
+h2 {
+    font-size: 3.6rem;
+}
+h3 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.formulario{
+    width: 100%;
+    height: 100%;
+    background-color: aquamarine;
+    text-align: center;
+    
+    background-image: url("src/img/ds.png");
+    background-repeat: no-repeat;
+    background-color: black;
+ 
+    justify-content: center;
+    text-align: ;
+}
+#nombre{
+justify-content: center;
+    font-size: large;
+    color:white;
+    font-weight: 700;
+    width: 30rem;
+    height: 4rem;
+}
+
+    #input{
+        height: 4rem;
+        width: 30rem;
+    }
+#enviar-get{
+    
+    width: 7rem;
+    height: 5rem;
+text-align:  center;
+    &.hover{
+        cursor: pointer;
+        background-color: yellow;
+    }
+}

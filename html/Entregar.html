@@ -1,0 +1,205 @@
+<!doctype html>
+
+<head>
+  <title> Ingrese datos </title>
+
+  <link rel="stylesheet" type="text/css" href="bodegasur.css">
+
+  <script>
+    //Recibe un parámetro de un evento al momento de apretar un tecla que llaremos e
+    function solonumeros(e) {
+      //Almacenamos la entrada del teclado en una variable llamada Key
+      key = e.keyCode || e.with;
+      //Creamos una variable llamda teclado
+      //Almacena lo que ingrese en el teclado y lo ponemos en la variable key
+      teclado = String.fromCharCode(key);
+      //Creamos un variable donde almacena los números permitidos a ingresar
+      numeros = "0123456789";//arreglo
+      // 8->Retroceso 37->izquierda 38->derecha 46->suprimir
+      especiales = "8-37-38-46"; //arreglo
+      teclado_especial = false; //booleano
+
+      //Buscar la tecla que presiona el usuario en el arreglo numeros
+      //Declaramos una variable i que va a contener el arreglo especial
+      for (var i in especiales) {
+        //Validar con el if lo que se esta capturando al momento de presionar una tecla en el teclado
+        if (key == especiales[i]) {
+          //convierte a teclado especial en true eso quiere decir que si ha encontrado la tecla especial la ejecute
+          teclado_especial = true;
+        }
+      }
+      //Vamos a crear el funcionamiento al momento de ingresar los números y que me valide que no puedo ingresar texto
+      //Si la tecla que estamos capturando es número
+      //Si no encuentra un número va a tener un valor -1
+      //Si la variable especial es falso. No va aceptar ese caracter especial (ni escrbir si visualizar ese caracter)
+      if (numeros.indexOf(teclado) == -1 && !teclado_especial) {
+        return false;
+      }
+    }
+    //evento onkeypress funciona cuando el usuario apreta el botón
+  </script>
+  <script>
+    function sololetras(e) {
+
+      key = e.keyCode || e.with;
+      teclado = String.fromCharCode(key).toLowerCase();
+      letras = "abcdefghijklmnñopqrstuvwxyz";
+
+      especiales = "8-37-38-46-164";
+      teclado_especial = false;
+      for (var i in especiales) {
+
+        if (key == especiales[i]) {
+
+          teclado_especial = true;
+          break;
+        }
+      }
+      if (letras.indexOf(teclado) == -1 && !teclado_especial) {
+        return false;
+      }
+    }
+
+  </script>
+</head>
+
+<body>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <div class="container">
+    <div >
+    <form id="formulario">
+
+      <div class="contenedor-campo">
+
+        <legend>Cliente con Credito</legend>
+        <div class="campo">
+          <label>Nombre del cliente</label>
+          <input id="nombre" class="input-text" type="text" name="nombre_txt"
+            onkeypress="  return sololetras(event)" />
+        </div>
+        <div class="campo">
+          <label>Apellido del cliente </label>
+          <input id="apellido" class="input-text" type="text" name="tipo_txt" onkeypress="  return sololetras(event)" />
+        </div>
+		<div class="campo">
+			<label>la direccion completa(cuidad,calle) </label>
+			<input id="direccion" class="input-text" type="text" name="codigo" >
+		  </div>
+        <div>
+          <!--boton oculto mandar para saber que formulario enviamos, ya sea el get o post-->
+          <input type="hidden" name="enviar_hdn" value="get" />
+        </div>
+      </div>
+
+
+      <form action="">
+
+        <!-- muestra el número de elemento que contiene la tabla -->
+       <p>Elementos en la Tabla:
+       <div id="adicionados"></div>
+        </p>
+        <!-- Dibujar la tabla -->
+        <table id="mytable" class="table table-bordered table-hover ">
+        <tr>
+
+       <th>Nombre</th>
+       <th>Apellido</th>
+	   <th>direccion</th>
+       <th>Eliminar</th>
+    
+          </tr>
+         </table>
+    
+       </form>
+
+  </form>
+</div>
+
+
+<div class="boton-e">
+
+
+  <button id="adicionar" class="btn btn-success" type="button">Agregar a la tabla</button>
+</button>
+<form id="formular" action="menu.html" method="get">
+  <button id="enviar-get">
+    &laquo; Anterior
+  </button>
+</form>
+
+<form id="formular" action="menu.html" method="get">
+  <button id="enviar-get">
+     HOME
+  </button>
+</form>
+
+  </div>
+
+
+
+  <!-- Vamos a programar la funcionalidad de ingresar datos a una tabla -->
+  <script type="text/javascript">
+    //Vamos a obtener los valores que el usuario ingrese desde las cajas de texto -->
+    $(document).ready(function () {
+      // Al momento de hacer clic en el boton agrabr a la tabla activaremos la función-->
+
+      $('#adicionar').click(function () {
+        var direccion = document.getElementById("direccion").value;
+        var nombre = document.getElementById("nombre").value;
+        var apellido = document.getElementById("apellido").value;
+        // vamos asignar un id al botón que la borra la fila -->
+
+
+        
+        if (nombre== "") {
+          alert("le campo nombre es obligatorio");
+          document.nombre.focus();
+          //<!-- La variable verificar toma el valor de falso --> 
+		  
+        } else if (apellido == "") {
+          alert("el campo apellido es obligatorio");
+          document.apellido.focus();
+          //<!-- La variable verificar toma el valor de falso --> 
+
+		} else   if (direccion== "") {
+          //creamos un div en js
+          alert("le campo direccion es obligatorio");
+          //<!-- focus permite que el puntero del mouse se posicione en el lugar indicado -->
+          document.direccion.focus();
+          //<!-- La variable verificar toma el valor de falso --> 
+
+        } else {
+
+          var i = 1;
+          // vamos a dibujar las filas de nuestra tabla -->
+          var fila = '<tr id="row' + i + '"><td>' + nombre + '</td><td>' + apellido + '</td><td>' + direccion+ '</td><td><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn_remove">Quitar</button></td></tr>';// esto seria los que contendra la fila con la información -->
+          // contador que va incrementado en +1 -->
+          i++;
+        }
+        // La parte de eliminación de la fila al momento de hacer clic en el botón eliminar -->
+        // Al momento de indicar a mi tabla cual es la fila a eliminar -->
+        $('#mytable tr:first').after(fila);
+        $("#adicionados").text("");
+        var nFilas = $("#mytable tr").length;
+        $("#adicionados").append(nFilas - 1);
+        document.getElementById("nombre").value = "";
+        document.getElementById("apellido").value = "";
+        document.getElementById("direccion").value = "";
+        document.getElementById("nombre").focus();
+      });
+      // segunda función -->
+      // Me permite eliminar el contenido de la tabla -->
+      $(document).on('click', '.btn_remove', function () {
+        var button_id = $(this).attr("id"); // creo una variable button_id la cual voy a llamar al atributo id -->
+        $('#row' + button_id + '').remove(); //borra todo ya sea datos con la fila --> 
+        // Limipia  el contador de filas correspondiente al último registro de la tabla-->
+        $("#adicionados").text("");
+        var nFilas = $("#mytable tr").length;
+        $("#adicionados").append(nFilas - 1);
+      });
+    });
+  </script>
+</body>
+
+</html>
